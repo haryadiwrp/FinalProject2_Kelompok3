@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen"
+    android:orientation="vertical"
+    android:background="@color/khaki">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/atributBag"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/atribut_bag"
+        android:layout_below="@+id/logo"/>
+
+
+    <TextView
+        android:id="@+id/textRegister"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/atributBag"
+        android:textSize="20dp"
+        android:text="New User? Register Here"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/textRegister"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginLeft="10dp"
+            android:id="@+id/loginAdmin"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login Admin"
+            android:height="3dp"/>
+
+        <Button
+            android:id="@+id/loginStaff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login Staff"
+            android:layout_toRightOf="@+id/loginAdmin"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:layout_toRightOf="@+id/loginStaff"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/loginUser"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Already a Member? Login Here"
+        android:layout_below="@+id/relativeButton"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>

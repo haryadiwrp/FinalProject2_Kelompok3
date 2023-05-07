@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/add_staff"
+    tools:context=".AddStaff"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_above="@+id/registerStaff"
+        android:text="DATA STAFF"
+        android:textSize="40dp"
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Email Staff"
+        android:background="@drawable/custom_input"
+        android:id="@+id/registerStaff"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:layout_below="@+id/registerStaff"
+        android:drawablePadding="10dp"
+        android:id="@+id/passwordStaff"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Password"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:layout_below="@+id/passwordStaff"
+        android:drawablePadding="10dp"
+        android:id="@+id/confirmPasswordStaff"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_marginTop="175dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="REGISTER STAFF"
+        android:layout_below="@+id/confirmPasswordStaff"/>
+
+
+</RelativeLayout>

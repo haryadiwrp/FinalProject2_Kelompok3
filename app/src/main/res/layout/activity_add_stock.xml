@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddStock"
+    android:background="@drawable/add_stock"
+    android:gravity="center">
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_above="@+id/itemID"
+        android:text="STOCK"
+        android:textSize="40dp"
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Email Staff"
+        android:background="@drawable/custom_input"
+        android:id="@+id/itemID"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:layout_below="@+id/itemID"
+        android:drawablePadding="10dp"
+        android:id="@+id/quantity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Password"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+
+    <Button
+        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:padding="2dp"
+        android:text="ADD GIVEN QUANTITY TO THE MENTIONED ITEM"
+        android:layout_below="@+id/quantity"/>
+
+</RelativeLayout>

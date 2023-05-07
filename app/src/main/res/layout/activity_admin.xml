@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAdmin">
+
+    <RelativeLayout
+        android:id="@+id/relativeStaff"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/bg_add_staff">
+
+        <Button
+            android:id="@+id/btnAddStaff"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD STAFF"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/relativeStaff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_add_stock">
+
+        <Button
+            android:id="@+id/btnAddStock"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD STOCK"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
