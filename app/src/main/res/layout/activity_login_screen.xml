@@ -17,13 +17,12 @@
         android:src="@drawable/logo" />
 
     <ImageView
-        android:layout_centerHorizontal="true"
         android:id="@+id/atributBag"
-        android:layout_width="400dp"
-        android:layout_height="210dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/welcome_screen_bg"
+        android:src="@drawable/atribut_bag"
         android:layout_below="@+id/logo"/>
 
 
@@ -63,7 +62,7 @@
             android:layout_toRightOf="@+id/loginAdmin"/>
 
         <Button
-            android:id="@+id/btnAbout"
+            android:id="@+id/about"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
