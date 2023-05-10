@@ -20,49 +20,49 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class LoginAdmin extends AppCompatActivity {
+public class LoginStaff extends AppCompatActivity {
 
-    EditText emailAdmin, passwordAdmin;
-    Button btnAdmin;
+    EditText emailStaff, passwordStaff;
+    Button btnStaff;
     Boolean valid = true;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_login_admin);
+        setContentView(R.layout.activity_login_staff);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        emailAdmin = findViewById(R.id.emailAdmin);
-        passwordAdmin = findViewById(R.id.passwordAdmin);
-        btnAdmin = findViewById(R.id.btnLoginAdmin);
+        emailStaff = findViewById(R.id.input_email);
+        passwordStaff = findViewById(R.id.input_password);
+        btnStaff = findViewById(R.id.btn_login);
 
-        btnAdmin.setOnClickListener(new View.OnClickListener() {
+        btnStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkField(emailAdmin);
-                checkField(passwordAdmin);
+                checkField(emailStaff);
+                checkField(passwordStaff);
 
                 if (valid) {
-                    firebaseAuth.signInWithEmailAndPassword(emailAdmin.getText().toString(), passwordAdmin.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    firebaseAuth.signInWithEmailAndPassword(emailStaff.getText().toString(), passwordStaff.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(LoginAdmin.this, "Login as Admin succes", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginStaff.this, "Login as Admin succes", Toast.LENGTH_SHORT).show();
                             checkUserLevel(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(LoginAdmin.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginStaff.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
+
             }
         });
 
@@ -76,14 +76,13 @@ public class LoginAdmin extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Log.d("TAG", "onSucces" + documentSnapshot.getData());
 
-                if (documentSnapshot.getString("isAdmin") != null) {
-                    startActivity(new Intent(getApplicationContext(), ActivityAdmin.class));
+                if (documentSnapshot.getString("isStaff") != null) {
+                    startActivity(new Intent(getApplicationContext(), AddStaff.class));
                 }
 
             }
         });
     }
-
 
     public boolean checkField (EditText textField) {
         if(textField.getText().toString().isEmpty()) {
@@ -94,5 +93,4 @@ public class LoginAdmin extends AppCompatActivity {
         }
         return valid;
     }
-
 }

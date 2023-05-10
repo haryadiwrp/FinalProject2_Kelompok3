@@ -9,29 +9,38 @@
     android:background="@color/khaki"
     android:gravity="center_vertical">
 
+
     <ImageView
+        android:layout_alignParentTop="true"
         android:id="@+id/logo"
-        android:layout_above="@+id/loginAdmin"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/logo" />
 
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/background"
+        android:layout_width="400dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/logo"
+        android:src="@drawable/login_background" />
 
     <EditText
-        android:drawableStart="@drawable/ic_baseline_email_24"
-        android:drawablePadding="10dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:hint="Email"
-        android:background="@drawable/custom_input"
-        android:id="@+id/loginAdmin"
+        android:id="@+id/emailAdmin"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:ems="10"
         android:layout_centerHorizontal="true"
-        android:inputType="textEmailAddress" />
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@+id/background"/>
 
     <EditText
         android:layout_marginTop="20dp"
@@ -39,7 +48,7 @@
         android:paddingEnd="10dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:layout_below="@+id/loginAdmin"
+        android:layout_below="@+id/emailAdmin"
         android:drawablePadding="10dp"
         android:id="@+id/passwordAdmin"
         android:layout_width="300dp"
@@ -50,6 +59,7 @@
         android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/btnLoginAdmin"
         android:layout_marginTop="75dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"

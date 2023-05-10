@@ -9,25 +9,42 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/txtDataStaff"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:layout_above="@+id/registerStaff"
+        android:layout_above="@+id/namaStaff"
         android:text="DATA STAFF"
         android:textSize="40dp"
         android:layout_marginBottom="24dp"
         android:textColor="@color/black"/>
 
+
     <EditText
         android:drawablePadding="10dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:hint="Email Staff"
+        android:hint="Nama Staff"
         android:background="@drawable/custom_input"
-        android:id="@+id/registerStaff"
+        android:id="@+id/namaStaff"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/custom_input"
+        android:layout_below="@+id/namaStaff"
+        android:drawablePadding="10dp"
+        android:id="@+id/emailStaff"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Email Staff"
         android:layout_centerHorizontal="true"
         android:inputType="textEmailAddress" />
 
@@ -36,7 +53,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:background="@drawable/custom_input"
-        android:layout_below="@+id/registerStaff"
+        android:layout_below="@+id/emailStaff"
         android:drawablePadding="10dp"
         android:id="@+id/passwordStaff"
         android:layout_width="300dp"
@@ -53,7 +70,7 @@
         android:background="@drawable/custom_input"
         android:layout_below="@+id/passwordStaff"
         android:drawablePadding="10dp"
-        android:id="@+id/confirmPasswordStaff"
+        android:id="@+id/confirmPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -62,12 +79,13 @@
         android:inputType="textPassword" />
 
     <Button
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="125dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:text="REGISTER STAFF"
-        android:layout_below="@+id/confirmPasswordStaff"/>
+        android:id="@+id/btnAddStaff"
+        android:layout_below="@+id/confirmPassword"/>
 
 
 </RelativeLayout>
