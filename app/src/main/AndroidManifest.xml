@@ -65,6 +65,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".HomeUser"
+            android:exported="false" />
+        <activity
             android:name=".RegisterUser"
             android:exported="false">
             <meta-data
