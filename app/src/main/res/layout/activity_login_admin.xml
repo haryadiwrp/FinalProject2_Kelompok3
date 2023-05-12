@@ -42,16 +42,6 @@
         android:paddingEnd="10dp"
         android:layout_below="@+id/background"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxBackgroundColor="@color/white"
-        app:boxBackgroundMode="outline"
-        android:layout_marginTop="9dp"
-        android:layout_below="@+id/emailAdmin"
-        android:id="@+id/layoutPasswordAdmin"
-        android:gravity="center_horizontal"
-        app:passwordToggleEnabled="true">
         <EditText
             android:layout_marginTop="10dp"
             android:paddingStart="10dp"
@@ -67,7 +57,7 @@
             android:hint="Password"
             android:layout_centerHorizontal="true"
             android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+
 
 
 
@@ -78,5 +68,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN AS ADMIN"
-        android:layout_below="@+id/layoutPasswordAdmin"/>
+        android:layout_below="@+id/passwordAdmin"/>
 </RelativeLayout>
