@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class CategoryClothing extends AppCompatActivity implements View.OnClickListener{
 
-    ImageView tshirt, formal, bottmWear, shoes;
+    ImageView tshirt, formal, bottmWear, shoes, iconBack;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +20,13 @@ public class CategoryClothing extends AppCompatActivity implements View.OnClickL
         formal = findViewById(R.id.img_formals);
         bottmWear = findViewById(R.id.img_celana);
         shoes = findViewById(R.id.img_shoes);
+        iconBack = findViewById(R.id.icon_back);
 
         tshirt.setOnClickListener(this);
         formal.setOnClickListener(this);
         bottmWear.setOnClickListener(this);
         shoes.setOnClickListener(this);
+        iconBack.setOnClickListener(this);
 
 
     }
@@ -47,6 +49,9 @@ public class CategoryClothing extends AppCompatActivity implements View.OnClickL
             Intent intentShoes = new Intent(CategoryClothing.this, RecyclerViewProduct.class);
             intentShoes.putExtra("category", "Shoes");
             startActivity(intentShoes);
+        } else if (view.getId() == R.id.icon_back) {
+            Intent intentBack = new Intent(CategoryClothing.this, HomePageUser.class);
+            startActivity(intentBack);
         }
     }
 }

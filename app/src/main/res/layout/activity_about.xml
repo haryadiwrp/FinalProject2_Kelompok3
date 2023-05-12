@@ -8,6 +8,14 @@
     android:background="@color/khaki">
 
     <ImageView
+        android:id="@+id/icon_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="47dp"
+        android:layout_marginStart="12dp"/>
+
+    <ImageView
         android:id="@+id/img_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

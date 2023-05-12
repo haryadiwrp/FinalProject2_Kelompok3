@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class About extends AppCompatActivity implements View.OnClickListener{
 
-    ImageView imgInsta, imgGithub, imgLinkedin;
+    ImageView imgInsta, imgGithub, imgLinkedin, iconBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,12 @@ public class About extends AppCompatActivity implements View.OnClickListener{
         imgInsta = findViewById(R.id.img_instagram);
         imgGithub = findViewById(R.id.img_github);
         imgLinkedin = findViewById(R.id.img_linkedin);
+        iconBack = findViewById(R.id.icon_back);
 
         imgInsta.setOnClickListener(this);
         imgGithub.setOnClickListener(this);
         imgLinkedin.setOnClickListener(this);
+        iconBack.setOnClickListener(this);
 
     }
 
@@ -38,6 +40,9 @@ public class About extends AppCompatActivity implements View.OnClickListener{
         } else if (view.getId() == R.id.img_linkedin) {
             Intent intentLinkedin = new Intent(Intent.ACTION_VIEW, Uri.parse("https://linkedin.com"));
             startActivity(intentLinkedin);
+        } else if (view.getId() == R.id.icon_back) {
+            Intent intentBack = new Intent(About.this, LoginScreen.class);
+            startActivity(intentBack);
         }
     }
 }
