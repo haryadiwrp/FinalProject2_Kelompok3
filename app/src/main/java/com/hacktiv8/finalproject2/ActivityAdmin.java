@@ -16,7 +16,7 @@ public class ActivityAdmin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_admin);
 
         btnAddStaff = findViewById(R.id.btnAddStaff);
@@ -32,7 +32,7 @@ public class ActivityAdmin extends AppCompatActivity {
         btnAddStock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AddStock.class));
+                startActivity(new Intent(getApplicationContext(), UploadProductActivity.class));
             }
         });
     }

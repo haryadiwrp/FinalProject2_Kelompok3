@@ -19,7 +19,7 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_login_screen);
 
         btnAdmin = findViewById(R.id.loginAdmin);
@@ -47,7 +47,7 @@ public class LoginScreen extends AppCompatActivity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginAdmin.class));
+                startActivity(new Intent(getApplicationContext(), About.class));
                 finish();
             }
         });
@@ -55,7 +55,7 @@ public class LoginScreen extends AppCompatActivity {
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginAdmin.class));
+                startActivity(new Intent(getApplicationContext(), LoginUser.class));
                 finish();
             }
         });
@@ -63,7 +63,7 @@ public class LoginScreen extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginAdmin.class));
+                startActivity(new Intent(getApplicationContext(), RegisterUser.class));
                 finish();
             }
         });

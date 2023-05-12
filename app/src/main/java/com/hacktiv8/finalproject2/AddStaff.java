@@ -34,7 +34,7 @@ public class AddStaff extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_add_staff);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -52,10 +52,6 @@ public class AddStaff extends AppCompatActivity {
         btnAddStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(AddStaff.this, "Add Data Staff Succes", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(getApplicationContext(), ActivityAdmin.class));
-//                finish();
-
                 checkField(nama);
                 checkField(email);
                 checkField(password);

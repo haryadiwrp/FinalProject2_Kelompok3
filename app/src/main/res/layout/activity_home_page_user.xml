@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageUser"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/khaki">
+
+        <TextView
+            android:id="@+id/txt_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <ImageView
+            android:id="@+id/img_baju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_clothes"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txt_home"
+            android:layout_marginTop="40dp"/>
+
+        <ImageView
+            android:id="@+id/img_elektronik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_electronics"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_baju"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_buku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_books"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_elektronik"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_others"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_buku"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryClothing"
+    android:fillViewport="true"
+    android:background="@color/khaki">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="47dp"
+            android:layout_alignLeft="@+id/img_tshirts"/>
+
+        <TextView
+            android:id="@+id/txt_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <ImageView
+            android:id="@+id/img_tshirts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_tshirts"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txt_category"
+            android:layout_marginTop="40dp"/>
+
+        <ImageView
+            android:id="@+id/img_formals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_formals"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_tshirts"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_celana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_bottomwear"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_formals"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_shoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_shoes"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_celana"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

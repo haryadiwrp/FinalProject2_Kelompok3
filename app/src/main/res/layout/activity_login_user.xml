@@ -4,43 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginAdmin"
+    tools:context=".LoginUser"
     android:orientation="vertical"
     android:background="@color/khaki"
     android:gravity="center_vertical">
 
-
     <ImageView
-        android:layout_alignParentTop="true"
         android:id="@+id/logo"
+        android:layout_above="@+id/loginUser"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/logo" />
 
-    <ImageView
-        android:layout_centerHorizontal="true"
-        android:id="@+id/background"
-        android:layout_width="400dp"
-        android:layout_height="220dp"
-        android:layout_below="@+id/logo"
-        android:src="@drawable/login_background" />
 
     <EditText
-        android:id="@+id/emailAdmin"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"
-        android:ems="10"
-        android:layout_marginTop="12dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:layout_below="@+id/background"/>
+        android:hint="Email"
+        android:background="@drawable/custom_input"
+        android:id="@+id/loginUser"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -48,35 +39,54 @@
         app:boxBackgroundColor="@color/white"
         app:boxBackgroundMode="outline"
         android:layout_marginTop="9dp"
-        android:layout_below="@+id/emailAdmin"
-        android:id="@+id/layoutPasswordAdmin"
+        android:layout_below="@+id/loginUser"
+        android:id="@+id/layoutPasswordUser"
         android:gravity="center_horizontal"
         app:passwordToggleEnabled="true">
         <EditText
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:layout_below="@+id/emailAdmin"
+            android:layout_below="@+id/loginUser"
             android:drawablePadding="10dp"
-            android:id="@+id/passwordAdmin"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/passwordUser"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:ems="10"
             android:hint="Password"
-            android:layout_centerHorizontal="true"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <Button
-        android:id="@+id/btnLoginAdmin"
-        android:layout_marginTop="75dp"
+        android:id="@+id/btn_login_user"
+        android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN AS ADMIN"
-        android:layout_below="@+id/layoutPasswordAdmin"/>
+        android:text="LOGIN AS USER"
+        android:layout_below="@+id/layoutPasswordUser"/>
+
+    <TextView
+        android:id="@+id/txt_regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:text="New User?"
+        android:layout_below="@+id/btn_login_user"
+        android:layout_marginLeft="80dp"/>
+
+    <Button
+        android:id="@+id/btn_regist_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_login_user"
+        android:text="REGISTER HERE"/>
+
 </RelativeLayout>

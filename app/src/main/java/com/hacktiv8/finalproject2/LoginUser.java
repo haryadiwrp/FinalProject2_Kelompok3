@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,10 +19,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class LoginStaff extends AppCompatActivity {
+public class LoginUser extends AppCompatActivity {
 
-    EditText emailStaff, passwordStaff;
-    Button btnStaff;
+    private EditText etEmail, etPassword;
+
+    private Button btn_login_user, btn_regist_user;
     Boolean valid = true;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -31,34 +31,33 @@ public class LoginStaff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getSupportActionBar().hide();
-        setContentView(R.layout.activity_login_staff);
+        setContentView(R.layout.activity_login_user);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        emailStaff = findViewById(R.id.input_email);
-        passwordStaff = findViewById(R.id.input_password);
-        btnStaff = findViewById(R.id.btn_login);
+        etEmail = findViewById(R.id.loginUser);
+        etPassword = findViewById(R.id.passwordUser);
+        btn_login_user = findViewById(R.id.btn_login_user);
+        btn_regist_user = findViewById(R.id.btn_regist_user);
 
-        btnStaff.setOnClickListener(new View.OnClickListener() {
+        btn_login_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkField(emailStaff);
-                checkField(passwordStaff);
+                checkField(etEmail);
+                checkField(etPassword);
 
                 if (valid) {
-                    firebaseAuth.signInWithEmailAndPassword(emailStaff.getText().toString(), passwordStaff.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    firebaseAuth.signInWithEmailAndPassword(etEmail.getText().toString(), etPassword.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(LoginStaff.this, "Login as Staff succes", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginUser.this, "Login as User succes", Toast.LENGTH_SHORT).show();
                             checkUserLevel(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(LoginStaff.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginUser.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -66,7 +65,13 @@ public class LoginStaff extends AppCompatActivity {
             }
         });
 
-
+        btn_regist_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), RegisterUser.class));
+                finish();
+            }
+        });
     }
 
     private void checkUserLevel(String uid) {
@@ -76,16 +81,17 @@ public class LoginStaff extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Log.d("TAG", "onSucces" + documentSnapshot.getData());
 
-                if (documentSnapshot.getString("isStaff") != null) {
-                    startActivity(new Intent(getApplicationContext(), About.class));
+                if (documentSnapshot.getString("isUser") != null) {
+                    startActivity(new Intent(getApplicationContext(), HomePageUser.class));
+                    finish();
                 }
 
             }
         });
     }
 
-    public boolean checkField (EditText textField) {
-        if(textField.getText().toString().isEmpty()) {
+    public boolean checkField(EditText textField) {
+        if (textField.getText().toString().isEmpty()) {
             textField.setError("Error");
             valid = false;
         } else {
